@@ -1,0 +1,90 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* Enable dark mode via class */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: #1a1a1a;
+  background-color: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dark {
+  color: #f5f5f5;
+  background-color: #18181b;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+/* CodeMirror overrides for dark mode */
+@media (prefers-color-scheme: dark) {
+  .cm-editor {
+    background-color: #1e1e1e;
+  }
+}
+
+/* Enable spell check underlines in CodeMirror */
+.cm-editor .cm-content {
+  -webkit-user-modify: read-write-plaintext-only;
+}
+
+.cm-editor .cm-line::spelling-error,
+.cm-editor .cm-content::spelling-error {
+  text-decoration: underline wavy red;
+}
+
+/* Ensure spell check underlines are visible */
+.cm-editor [spellcheck="true"] {
+  -webkit-spellcheck: true;
+}
+
+/* Allotment (resizable panels) styles */
+.dark .split-view-view {
+  background: #18181b;
+}
+
+.dark .sash {
+  background: #3f3f46;
+}
+
+.dark .sash:hover {
+  background: #3b82f6;
+}
+
+.sash:hover {
+  background: #3b82f6;
+}
