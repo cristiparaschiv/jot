@@ -46,6 +46,31 @@ Download the latest release for your platform from the [Releases](https://github
 - [Rust](https://www.rust-lang.org/tools/install)
 - [Tauri CLI](https://tauri.app/v1/guides/getting-started/prerequisites)
 
+##### Linux (Fedora)
+
+```bash
+# Install Rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source $HOME/.cargo/env
+
+# Install system dependencies
+sudo dnf install gcc make webkit2gtk4.1-devel openssl-devel curl wget file \
+  libappindicator-gtk3-devel librsvg2-devel gtk3-devel libsoup3-devel \
+  javascriptcoregtk4.1-devel
+```
+
+##### Linux (Ubuntu/Debian)
+
+```bash
+# Install Rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source $HOME/.cargo/env
+
+# Install system dependencies
+sudo apt install build-essential libwebkit2gtk-4.1-dev libssl-dev \
+  libgtk-3-dev libayatana-appindicator3-dev librsvg2-dev
+```
+
 #### Steps
 
 ```bash
